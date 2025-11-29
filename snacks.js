@@ -10,7 +10,7 @@ function getInitials(nomeCompleto) {
 // Snack 2
 
 function createSlug(str) {
-    const slug = str.replaceAll(' ', '-')
+    const slug = str.toLowerCase().replaceAll(' ', '-')
     return slug
 }
 
