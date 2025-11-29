@@ -7,14 +7,18 @@ function getInitials(nomeCompleto) {
 
 
 
-// Snack 2
+// Snack 2 / 4 / 6
 
 function createSlug(str) {
-    const slug = str.toLowerCase().replaceAll(' ', '-')
-    return slug
+    if (!str) {
+        throw new Error('Titolo non valido')
+    } else {
+        const slug = str.toLowerCase().replaceAll(' ', '-')
+        return slug
+    }
 }
 
-module.exports = { getInitials, createSlug, average }
+
 
 // Snack 3
 
@@ -26,3 +30,21 @@ function average(arr) {
     const media = somma / arr.length
     return media
 }
+
+// Snack 5
+
+function isPalindrome(parola) {
+    const parolaInversa = parola.split('').reverse().join('')
+    return parola === parolaInversa
+}
+
+// Snack 7
+
+function findPostById(arr, id) {
+    return arr.find((post) => post.id === id)
+
+}
+
+
+
+module.exports = { getInitials, createSlug, average, isPalindrome, findPostById }
